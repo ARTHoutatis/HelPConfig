@@ -110,7 +110,6 @@ body {
     font-weight: 600;
     text-decoration: none;
     border: none;
-    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -179,8 +178,7 @@ body {
     height: 36px;
     padding: 0;
     border-radius: 8px;
-    background-color: var(--primary);
-    color: var(--white);
+    bolor: var(--white);
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1;
