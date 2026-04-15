@@ -110,6 +110,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     border: none;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -165,12 +166,13 @@ body {
 
 .btn-restart {
     background-color: var(--white);
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--text);
+    border: 2px solid var(--border);
 }
 
 .btn-restart:hover {
-    background-color: var(--primary-light);
+    background-color: var(--white);
+    color: #EF4444;
 }
 
 .btn-add {
@@ -178,7 +180,8 @@ body {
     height: 36px;
     padding: 0;
     border-radius: 8px;
-    bolor: var(--white);
+    background-color: var(--primary);
+    color: var(--white);
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1;
