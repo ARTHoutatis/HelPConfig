@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurateur PC - HelPConfig</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">HelPConfig</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="configurateur.html" class="nav-link active">Configurateur PC</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="config-main">
+        <div class="config-header">
+            <div class="container">
+                <h1 class="config-title">Configurateur PC</h1>
+                <p class="config-subtitle">Créez votre configuration gaming optimisée au meilleur prix</p>
+            </div>
+        </div>
+
+        <div class="config-layout">
+            <div class="config-builder">
+                <div class="container">
+                    <div class="config-header-actions">
+                        <button class="btn btn-share" disabled>Partager la configuration</button>
+                        <button class="btn btn-restart" id="btn-restart">🗑️ Redémarrer</button>
+                    </div>
+
+                    <div class="config-section">
+                        <h2 class="config-section-title">Sélection des composants</h2>
+                        
+                        <div class="component-list">
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">1</span>
+                                    <div class="component-details">
+                                        <h3>Processeur (CPU)</h3>
+                                        <p class="component-desc">Le cerveau de votre PC</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="cpu">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">2</span>
+                                    <div class="component-details">
+                                        <h3>Carte graphique (GPU)</h3>
+                                        <p class="component-desc">Essentiel pour le gaming</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="gpu">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">3</span>
+                                    <div class="component-details">
+                                        <h3>Carte mère</h3>
+                                        <p class="component-desc">Connecte tous les composants</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="motherboard">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+
+                            <div class="component-row multi-component" data-component="ram">
+                                <div class="component-info">
+                                    <span class="component-number">4</span>
+                                    <div class="component-details">
+                                        <h3>Mémoire RAM <span class="component-count" id="ram-count">(0)</span></h3>
+                                        <p class="component-desc">16 Go minimum recommandé</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="ram">Choisir</button>
+                                    <span class="action-slot">
+                                        <button class="btn btn-add" data-component="ram" title="Ajouter un autre kit RAM">+</button>
+                                    </span>
+                                    <span class="component-price" id="ram-price">--</span>
+                                </div>
+                            </div>
+                            <div class="extra-slots" id="ram-slots"></div>
+
+                            <div class="component-row multi-component" data-component="storage">
+                                <div class="component-info">
+                                    <span class="component-number">5</span>
+                                    <div class="component-details">
+                                        <h3>Stockage (SSD) <span class="component-count" id="storage-count">(0)</span></h3>
+                                        <p class="component-desc">SSD pour le système et les jeux</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="storage">Choisir</button>
+                                    <span class="action-slot">
+                                        <button class="btn btn-add" data-component="storage" title="Ajouter un autre SSD">+</button>
+                                    </span>
+                                    <span class="component-price" id="storage-price">--</span>
+                                </div>
+                            </div>
+                            <div class="extra-slots" id="storage-slots"></div>
+
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">6</span>
+                                    <div class="component-details">
+                                        <h3>Alimentation (PSU)</h3>
+                                        <p class="component-desc">Qualité primordiale, ne pas négliger</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="psu">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">7</span>
+                                    <div class="component-details">
+                                        <h3>Boîtier</h3>
+                                        <p class="component-desc">Aération et esthétique</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="case">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+
+                            <div class="component-row">
+                                <div class="component-info">
+                                    <span class="component-number">8</span>
+                                    <div class="component-details">
+                                        <h3>Refroidissement</h3>
+                                        <p class="component-desc">Ventirad ou AIO selon le CPU</p>
+                                    </div>
+                                </div>
+                                <div class="component-actions">
+                                    <button class="btn btn-select" data-component="cooling">Choisir</button>
+                                    <span class="action-slot" aria-hidden="true"></span>
+                                    <span class="component-price">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="config-sidebar">
+                <div class="config-summary">
+                    <h3>Récapitulatif</h3>
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <span>Composants sélectionnés</span>
+                            <span class="summary-value" id="selected-count">0/8</span>
+                        </div>
+                        <div class="summary-item summary-total">
+                            <span>Total estimé</span>
+                            <span class="summary-price" id="total-price">0 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-warnings">
+                    <h3>Vérification compatibilité</h3>
+                    <div class="warning-list" id="warning-list">
+                        <p class="warning-empty">Sélectionnez des composants pour vérifier la compatibilité</p>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <div class="modal" id="component-modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Choisir un composant</h2>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Rechercher un composant..." class="search-input">
+                    </div>
+                    <div class="product-list" id="product-list">
+                        <p class="placeholder-text">Liste des produits à venir...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HelPConfig - ARTH & Tomyshiro</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
